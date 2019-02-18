@@ -17,6 +17,9 @@
             <p v-if="show">hello</p>
         </transition>
         <br/>
+        <span v-bind:title="tips">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
     </div>
 </template>
 
@@ -30,6 +33,7 @@
         , data() {
             return {
                 dialogVisible: false
+                , tips: "FXXK"
             };
         }
         , props: {
