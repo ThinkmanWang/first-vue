@@ -31,11 +31,23 @@
 </template>
 
 <script>
-export default {
+  // import {EventBus} from "@/event-bus";
+
+  export default {
   name: 'HelloWorld',
   props: {
     msg: String
   }
+  , methods: {
+    update(data) {
+      this.msg = data;
+    }
+  }
+  // , mounted() {
+  //   EventBus.$on("dateChanged", ({data}) => {
+  //     this.msg = data
+  //   })
+  // }
 }
 </script>
 

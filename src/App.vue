@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld ref="hello" msg="Welcome to Your Vue.js App"/>
+    <First counter=2> </First>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import First from './components/First.vue'
+import {EventBus} from "@/event-bus";
 
 export default {
   name: 'app',
   components: {
+    First,
     HelloWorld
+  }
+  , mounted() {
+    EventBus.$on("dateChanged", ({data}) => {
+      // this.msg = data
+      this.$refs.hello.update(data)
+    })
   }
 }
 </script>
