@@ -36,19 +36,16 @@
             , getPassword() {
                 return this.$refs.et_password.value;
             }
-            , updateText() {
-                this.loginResult = "FXXK"
-            }
             , onSubmit() {
-                this.$dlg.alert("FXXK", {
-                    // width: 350,
-                    // height: 450,
-                    //send params to inner component
+                this.$dlg.alert('Do you really want to leave?', {
+                    messageType: 'confirm',
                     callback: data=>{
-                        //alert selected result
                         this.loginResult = this.$refs.et_username.value + " " + this.$refs.et_password.value
+                    },
+                    cancelCallback: data=>{
+                        //do something when you click cancel button
+
                     }
-                    
                 });
             }
         }
