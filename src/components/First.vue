@@ -7,6 +7,14 @@
 
         <button v-on:click="incr">Add 1</button>
         <p>The button above has been clicked {{ counter }} times.</p>
+
+        <br/>
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
     </div>
 </template>
 
@@ -22,6 +30,9 @@
             }
             , counter: {
                 default: 0
+            }
+            , show: {
+                default: true
             }
         }
         , methods: {
@@ -41,5 +52,10 @@
 </script>
 
 <style scoped>
-
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
 </style>
