@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <router-link to="/login" target="_blank">Login</router-link>
+    <router-view></router-view>
     <HelloWorld ref="hello" msg="Welcome to Your Vue.js App"/>
     <First counter=2> </First>
   </div>
@@ -10,10 +12,13 @@
 import HelloWorld from './components/HelloWorld.vue'
 import First from './components/First.vue'
 import {EventBus} from "@/event-bus";
+import router from './router'
+
 
 export default {
-  name: 'app',
-  components: {
+  name: 'app'
+  , router
+  , components: {
     First,
     HelloWorld
   }

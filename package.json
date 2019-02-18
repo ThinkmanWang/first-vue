@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "element-ui": "^2.5.4",
-    "vue": "^2.5.22"
+    "v-dialogs": "^2.0.2",
+    "vue": "^2.5.22",
+    "wc-messagebox": "^1.10.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
