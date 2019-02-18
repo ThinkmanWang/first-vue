@@ -18,7 +18,7 @@ export default {
     HelloWorld
   }
   , mounted() {
-    EventBus.$on("dateChanged", ({data}) => {
+    EventBus.$on("com.thinkman.thinkutils.hello.dateChanged", ({data}) => {
       // this.msg = data
       this.$refs.hello.update(data)
     })

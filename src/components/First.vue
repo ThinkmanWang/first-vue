@@ -26,7 +26,7 @@
         }
         , methods: {
             submit() {
-                EventBus.$emit("dateChanged", {
+                EventBus.$emit("com.thinkman.thinkutils.hello.dateChanged", {
                     data: this.message
                 });
             }
